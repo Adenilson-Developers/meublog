@@ -14,7 +14,7 @@ const blogRoutes = require('./src/routes/blogRoutes');
 // express app
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/nodeblog",{
+mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser: true,
     useUnifiedTopolog: true
 })
