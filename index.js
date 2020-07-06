@@ -14,34 +14,11 @@ const blogRoutes = require('./src/routes/blogRoutes');
 // express app
 const app = express();
 
-mongoose.connect(process.env.MONGO_URL,{
+mongoose.connect("mongodb+srv://nodeblog:nodeblog@nodeblog.eiaj0.mongodb.net/nodeblog?retryWrites=true&w=majority", {
     useNewUrlParser: true,
-    useUnifiedTopolog: true
+    useUnifiedTopology: true  
 })
-
-/*
-var url = "mongodb+srv://nodeblog:nodeblog@nodeblog.eiaj0.mongodb.net/nodeblog?retryWrites=true&w=majority"
-
-mongoose.connect(url, function(err, db){
-    if(err){
-        console.log('Não foi possível conectar ao mongo:' + err)
-    }else{
-        console.log('Conexão com o banco feito com sucesso')
-    }
-})
-
-*/
-
 //Conexão com Mongodb
-
-/*
-mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
-*/
-
-
 /*
 let dbURL = "mongodb+srv://nodeblog:nodeblog@nodeblog.eiaj0.mongodb.net/nodeblog?retryWrites=true&w=majority"
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -80,7 +57,10 @@ app.use((req, res)=>{
 });
 
 
-app.listen(process.env.PORT || 3000);
+const port = process.env.PORT || 3000;
+app.listen(port, function(){
+    console.log('Servidor Rodando na porta', port);
+})
 
 
 
