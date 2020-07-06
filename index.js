@@ -14,9 +14,8 @@ const blogRoutes = require('./src/routes/blogRoutes');
 // express app
 const app = express();
 
-                   
 
-mongoose.connect("mongodb+srv://deploy:umblerdeploy@nodeblog@mongo_nodeblog:27017/nodeblog", {
+mongoose.connect("mongodb+srv://nodeblog:nodeblog@nodeblog.eiaj0.mongodb.net/nodeblog?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true  
 }).then(()=>{
