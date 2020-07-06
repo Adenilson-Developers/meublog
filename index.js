@@ -14,7 +14,7 @@ const blogRoutes = require('./src/routes/blogRoutes');
 // express app
 const app = express();
 
-
+/*
 mongoose.connect("mongodb+srv://nodeblog:nodeblog@nodeblog.eiaj0.mongodb.net/nodeblog?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true  
@@ -23,17 +23,17 @@ mongoose.connect("mongodb+srv://nodeblog:nodeblog@nodeblog.eiaj0.mongodb.net/nod
 }).catch((err)=>{
     console.log("Erro: Conexão não realizada", err);
 })
+*/
 
 
 
-/*
 mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser: true
 });
 
 
 //Conexão com Mongodb
-
+/*
 let dbURL = "mongodb+srv://nodeblog:nodeblog@nodeblog.eiaj0.mongodb.net/nodeblog?retryWrites=true&w=majority"
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
     //.then((result) => app.listen(3000))
