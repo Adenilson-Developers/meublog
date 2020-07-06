@@ -16,7 +16,7 @@ const app = express();
 
                    
 
-mongoose.connect("mongodb+srv://deploy:umblerdeploy@nodeblog.eiaj0.mongodb.net/nodeblog?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://deploy:umblerdeploy@nodeblog@mongo_nodeblog:27017/nodeblog", {
     useNewUrlParser: true,
     useUnifiedTopology: true  
 }).then(()=>{
