@@ -14,6 +14,15 @@ const blogRoutes = require('./src/routes/blogRoutes');
 // express app
 const app = express();
 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/nodeblog', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+mongoose.connection.on('conected', () =>{
+    console.log('Mongo conectado !!!!');
+})
+
 /*
 mongoose.connect("mongodb+srv://nodeblog:nodeblog@nodeblog.eiaj0.mongodb.net/nodeblog?retryWrites=true&w=majority", {
     useNewUrlParser: true,
@@ -26,6 +35,7 @@ mongoose.connect("mongodb+srv://nodeblog:nodeblog@nodeblog.eiaj0.mongodb.net/nod
 */
 
 
+/*
 
 mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser: true
