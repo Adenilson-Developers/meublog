@@ -62,6 +62,10 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
 app.use(morgan('dev'));
 
+if (process.env.NODE_ENV === 'production'){
+    app.use(express.static('src/build'));
+}
+
 
 app.get('/',(req, res)=>{
     res.redirect('/blogs');
